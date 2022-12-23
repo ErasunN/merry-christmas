@@ -1,0 +1,619 @@
+@import url(https://fonts.cdnfonts.com/css/christmas-classica);
+@import url(https://fonts.googleapis.com/css?family=Mountains+of+Christmas:700);
+body {
+    background: #000854;
+    background-size: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    margin: 0;
+    width: 100%;
+}
+
+/***************************
+Lights
+***************************/
+
+.lightrope {
+    background-color: #000854;
+    margin: 0 10px;
+    margin-top: -5px;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+.lightrope li {
+    list-style: none;
+    width: 1vw;
+    height: 3vh;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    border-radius: 50%;
+    background: rgba(0, 247, 165, 1);
+    box-shadow: 0px 3vh/6 1vw*2 3px rgba(0, 247, 165, 1);
+    animation-name: flash-1;
+    animation-duration: 2s;
+}
+
+.lightrope li:nth-child(odd){
+    animation-duration: 1.8s;
+}
+
+.lightrope li:nth-child(3n+1){
+    animation-duration: 1.4s;
+}
+
+.lightrope li:before {
+    content: "";
+    position: absolute;
+    background: #222;
+    width: (1vw - 2);
+    height: 3vh/3;
+    border-radius: 3px;
+    top: (0 - (3vh/6));
+    left: 1px;
+}
+
+.lightrope li:after {
+    content: "";
+    top: (0 - 3vh/2);
+    left: 1vw - 3;
+    position: absolute;
+    width: 40px + 12;
+    height: (3vh/3 * 2);
+    border-bottom: solid #222 2px;
+    border-radius: 50%;
+}
+
+.lightrope li:nth-child(2n+1){
+    background: rgba(247, 0, 148, 1);
+    box-shadow: 0px 3vh/6 1vw*2 3px rgba(247, 0, 148, 1);
+    animation-name: flash-2;
+    animation-duration: 2s;
+}
+
+.lightrope li:nth-child(4n+1){
+    background: rgba(0, 255, 255, 1);
+    box-shadow: 0px 3vh/6 1vw*2 3px rgba(0, 255, 255, 0.5);
+    animation-name: flash-3;
+    animation-duration: 2s;
+}
+
+
+@keyframes flash-1 {
+
+    0%,
+    100% {
+        background: rgba(0, 247, 165, 1);
+        box-shadow: 0px 3vh/6 1vw*2 3px rgba(0, 247, 165, 1);
+    }
+
+    50% {
+        background: rgba(0, 247, 165, 0.4);
+        box-shadow: 0px 3vh/6 1vw*2 3px rgba(0, 247, 165, 0.2);
+    }
+}
+
+@keyframes flash-2 {
+
+    0%,
+    100% {
+        background: rgba(0, 255, 255, 1);
+        box-shadow: 0px 3vh/6 1vw*2 3px rgba(0, 255, 255, 1);
+    }
+
+    50% {
+        background: rgba(0, 255, 255, 0.4);
+        box-shadow: 0px 3vh/6 1vw*2 3px rgba(0, 255, 255, 0.2);
+    }
+}
+
+@keyframes flash-3 {
+
+    0%,
+    100% {
+        background: rgba(247, 0, 148, 1);
+        box-shadow: 0px 3vh/6 1vw*2 3px rgba(247, 0, 148, 1);
+    }
+
+    50% {
+        background: rgba(247, 0, 148, 0.4);
+        box-shadow: 0px 3vh/6 1vw*2 3px rgba(247, 0, 148, 0.2);
+    }
+}
+
+/***************************
+Text
+***************************/
+
+.christmas-green {
+    background: -webkit-linear-gradient(transparent, transparent), url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/191814/green_glitter.gif) repeat;
+    background: -o-linear-gradient(transparent, transparent) !important;
+    background-clip: text;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    margin: 0;
+    padding: 0;
+    font-weight: 700;
+    width: 100%;
+    overflow: auto;
+    text-align: center;
+    letter-spacing: 1px;
+    z-index: 999999;
+}
+
+.christmas-gold {
+    background: -webkit-linear-gradient(transparent, transparent), url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/191814/gold_glitter.gif) repeat;
+    background: -o-linear-gradient(transparent, transparent) !important;
+    background-clip: text;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    margin: 0;
+    padding: 0;
+    font-weight: 700;
+    width: 100%;
+    overflow: auto;
+    text-align: center;
+    letter-spacing: 1px;
+    z-index: 999999;
+}
+
+#christmas_text {
+    position: absolute;
+    font-size: 7.5vw;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    max-height: 100px;
+    line-height: 0;
+    margin-top: 150px;
+    color: #fff;
+    /* font-family: 'Christmas Classica', sans-serif; */
+    font-family: 'Mountains of Christmas', cursive;
+}
+
+#christmas_text span {
+    padding: 10px;
+}
+
+/***************************
+Tree
+***************************/
+
+.container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50px) translateY(-50px);
+}
+
+.socks {
+    position: absolute;
+    top: 80px;
+    left: 10px;
+    z-index: 1;
+    transform: rotate(10deg);
+}
+
+.socks.two {
+    position: absolute;
+    top: 143px;
+    left: -40px;
+    z-index: 1;
+    transform: rotate(-10deg);
+}
+
+.socks:hover {
+    animation: 0.3s deco linear 1;
+}
+
+.top {
+    position: absolute;
+    width: 15px;
+    height: 35px;
+    background: #E54B4B;
+    border-radius: 5px;
+}
+
+.foot {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 25px;
+    height: 15px;
+    border-radius: 30px;
+    background: #E54B4B;
+}
+
+
+.foot.two {
+    position: absolute;
+    top: 20px;
+    left: -10px;
+    width: 25px;
+    height: 15px;
+    border-radius: 30px;
+    background: #E54B4B;
+}
+
+.tree {
+    position: absolute;
+}
+
+.base {
+    width: 210px;
+    height: 10px;
+    background: #CCC;
+    position: absolute;
+    top: 304px;
+    left: -45px;
+    border-radius: 100%;
+}
+
+.base:after {
+    content: '';
+    width: 20px;
+    height: 30px;
+    background: #84714F;
+    position: absolute;
+    top: -25px;
+    left: 83px;
+}
+
+.layer {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid #499F68;
+}
+
+.layer.two {
+    position: absolute;
+    top: 30px;
+    left: -10px;
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+    border-bottom: 120px solid #499F68;
+}
+
+.layer.three {
+    position: absolute;
+    top: 50px;
+    left: -30px;
+    border-left: 80px solid transparent;
+    border-right: 80px solid transparent;
+    border-bottom: 160px solid #499F68;
+}
+
+.layer.four {
+    position: absolute;
+    top: 80px;
+    left: -50px;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 200px solid #499F68;
+}
+
+
+.bauble {
+    z-index: 1;
+    position: absolute;
+    border-radius: 100%;
+}
+
+.bauble.one {
+    top: 65px;
+    width: 13px;
+    height: 13px;
+    background: #FFE066;
+}
+
+.bauble.two {
+    top: 105px;
+    left: -30px;
+    width: 13px;
+    height: 13px;
+    background: #FFE066;
+}
+
+.bauble.three {
+    top: 110px;
+    left: 15px;
+    width: 13px;
+    height: 13px;
+    background: #FFE066;
+}
+
+.bauble.four {
+    top: 163px;
+    left: -30px;
+    width: 13px;
+    height: 13px;
+    background: #FFE066;
+}
+
+.deco {
+    position: absolute;
+    top: 130px;
+    left: 30px;
+    width: 50px;
+    height: 20px;
+    background: #EF476F;
+}
+
+.line {
+    z-index: 1;
+    position: absolute;
+    top: 70px;
+    left: -43px;
+    width: 70px;
+    height: 0;
+    background: #FFE066;
+    border: 1px dashed #FFF;
+    transform: rotate(-30deg);
+}
+
+.line.two {
+    top: 93px;
+    left: -50px;
+    width: 85px;
+    height: 0;
+    background: #FFE066;
+    border: 1px dashed #FFF;
+    transform: rotate(-30deg);
+}
+
+.line.three {
+    top: 123px;
+    left: -60px;
+    width: 106px;
+    height: 0;
+    background: #FFE066;
+    border: 1px dashed #FFF;
+    transform: rotate(-30deg);
+}
+
+.line.four {
+    top: 153px;
+    left: -80px;
+    width: 136px;
+    height: 0;
+    background: #FFE066;
+    border: 1px dashed #FFF;
+    transform: rotate(-30deg);
+}
+
+.pressie {
+    z-index: 1;
+    position: absolute;
+    top: 250px;
+    left: 120px;
+    width: 60px;
+    height: 60px;
+    background: #F45B69;
+}
+
+.cover {
+    position: absolute;
+    left: -3px;
+    width: 66px;
+    height: 10px;
+    background: #F45B69;
+    border-bottom: 1px solid #AAA;
+}
+
+.wrap {
+    position: absolute;
+    left: 25px;
+    background: #59C3C3;
+    width: 10px;
+    height: 60px;
+}
+
+.ribbon {
+    position: absolute;
+    top: -30px;
+    left: 10px;
+    background: #FFF;
+    width: 12px;
+    height: 25px;
+    border-radius: 0 80% 20% 80%;
+    border: 3px solid #59C3C3;
+    transform: rotate(-10deg);
+}
+
+.ribbon:after {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    background: #FFF;
+    width: 12px;
+    height: 25px;
+    border-radius: 0 80% 20% 80%;
+    border: 3px solid #59C3C3;
+    transform: rotate(60deg);
+    content: '';
+}
+
+.pressie:hover {
+    animation: 0.3s move linear 2;
+}
+
+@keyframes move {
+    0% {
+        transform: rotate(10deg)
+    }
+
+    50% {
+        transform: rotate(-15deg)
+    }
+
+    100% {
+        transform: rotate(10deg)
+    }
+}
+
+@keyframes deco {
+    0% {
+        transform: rotate(5deg)
+    }
+
+    50% {
+        transform: rotate(-5deg)
+    }
+
+    100% {
+        transform: rotate(5deg)
+    }
+}
+
+.light {
+    box-shadow: 1px 1px 10px #CCC,
+        -2px 1px 10px #CCC,
+        0 -1px 10px #CCC
+}
+
+.star {
+    z-index: 1;
+    position: absolute;
+    left: -49px;
+    top: -40px;
+    display: block;
+    color: red;
+    width: 0px;
+    height: 0px;
+    border-right: 100px solid transparent;
+    border-bottom: 70px solid #FFE066;
+    border-left: 100px solid transparent;
+    transform: rotate(35deg) scale(.2);
+}
+
+.star:before {
+    border-bottom: 80px solid #FFE066;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    position: absolute;
+    height: 0;
+    width: 0;
+    top: -45px;
+    left: -65px;
+    display: block;
+    content: '';
+    transform: rotate(-35deg);
+
+}
+
+.star:after {
+    position: absolute;
+    display: block;
+    color: red;
+    top: 3px;
+    left: -105px;
+    width: 0px;
+    height: 0px;
+    border-right: 100px solid transparent;
+    border-bottom: 70px solid #FFE066;
+    border-left: 100px solid transparent;
+    transform: rotate(-70deg);
+    content: '';
+}
+
+.star.two {
+    transform: rotate(23deg) scale(.1);
+    position: absolute;
+    top: 102px;
+    left: -60px;
+}
+
+
+/***************************
+Snow.  
+***************************/
+.snow,
+.snow:before,
+.snow:after {
+    position: absolute;
+    top: -600px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: radial-gradient(5px 5px at 34px 172px, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 86px 25px, #ffffff 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 388px 47px, #ffffff 50%, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 53px 303px, #ffffff 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 373px 475px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 196px 261px, rgba(255, 255, 255, 0.7) 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 434px 424px, rgba(255, 255, 255, 0.7) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 234px 213px, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 393px 356px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 537px 497px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 151px 362px, rgba(255, 255, 255, 0.7) 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 110px 99px, rgba(255, 255, 255, 0.7) 50%, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 270px 111px, rgba(255, 255, 255, 0.7) 50%, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 351px 424px, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 459px 279px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 584px 126px, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 303px 486px, #ffffff 50%, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 132px 292px, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 120px 162px, #ffffff 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 396px 460px, #ffffff 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 169px 508px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 177px 298px, rgba(255, 255, 255, 0.7) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 575px 410px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 29px 140px, rgba(255, 255, 255, 0.6) 50%, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 82px 378px, rgba(255, 255, 255, 0.7) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 482px 473px, #ffffff 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 56px 24px, rgba(255, 255, 255, 0.7) 50%, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 157px 73px, rgba(255, 255, 255, 0.6) 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 97px 496px, #ffffff 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 240px 225px, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 12px 102px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 518px 417px, rgba(255, 255, 255, 0.6) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 323px 155px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 534px 119px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 294px 245px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 270px 432px, #ffffff 50%, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 406px 292px, rgba(255, 255, 255, 0.7) 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 42px 233px, rgba(255, 255, 255, 0.7) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 109px 160px, rgba(255, 255, 255, 0.7) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 158px 359px, rgba(255, 255, 255, 0.7) 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 212px 133px, rgba(255, 255, 255, 0.6) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 303px 536px, rgba(255, 255, 255, 0.6) 50%, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 513px 314px, rgba(255, 255, 255, 0.7) 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 54px 346px, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 127px 115px, #ffffff 50%, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 559px 29px, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 493px 581px, #ffffff 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 339px 414px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 349px 481px, #ffffff 50%, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 331px 86px, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 497px 385px, #ffffff 50%, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 65px 332px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 432px 593px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 377px 240px, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 293px 224px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 455px 336px, rgba(255, 255, 255, 0.7) 50%, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 93px 50px, #ffffff 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 129px 453px, rgba(255, 255, 255, 0.6) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 393px 78px, rgba(255, 255, 255, 0.7) 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 364px 75px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 66px 19px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 254px 199px, #ffffff 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 178px 454px, rgba(255, 255, 255, 0.6) 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 499px 280px, rgba(255, 255, 255, 0.6) 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 419px 40px, rgba(255, 255, 255, 0.6) 50%, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 179px 593px, rgba(255, 255, 255, 0.6) 50%, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 66px 529px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 498px 329px, #ffffff 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 381px 464px, rgba(255, 255, 255, 0.7) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 172px 17px, #ffffff 50%, rgba(0, 0, 0, 0));
+    background-size: 600px 600px;
+    animation: snow 5s linear infinite;
+}
+
+#snow {
+    background: none;
+    z-index: -1;
+    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/191814/flake1.png'), url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/191814/flake2.png'), url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/191814/flake3.png');
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    -webkit-animation: snow 10s linear infinite;
+    -moz-animation: snow 10s linear infinite;
+    -ms-animation: snow 10s linear infinite;
+    animation: snow 10s linear infinite;
+}
+
+@keyframes snow {
+    0% {
+        background-position: 0px 0px, 0px 0px, 0px 0px;
+    }
+
+    50% {
+        background-position: 0px 500px, 0px 200px, 0px 150px;
+    }
+
+    100% {
+        background-position: 0px 1000px, 0px 400px, 0px 300px;
+    }
+}
+
+@-moz-keyframes snow {
+    0% {
+        background-position: 0px 0px, 0px 0px, 0px 0px;
+    }
+
+    50% {
+        background-position: 500px 500px, 100px 200px, -100px 150px;
+    }
+
+    100% {
+        background-position: 400px 1000px, 200px 400px, 100px 300px;
+    }
+}
+
+@-webkit-keyframes snow {
+    0% {
+        background-position: 0px 0px, 0px 0px, 0px 0px;
+    }
+
+    50% {
+        background-position: 500px 500px, 100px 200px, -100px 150px;
+    }
+
+    100% {
+        background-position: 500px 1000px, 200px 400px, -100px 300px;
+    }
+}
+
+@-ms-keyframes snow {
+    0% {
+        background-position: 0px 0px, 0px 0px, 0px 0px;
+    }
+
+    50% {
+        background-position: 500px 500px, 100px 200px, -100px 150px;
+    }
+
+    100% {
+        background-position: 500px 1000px, 200px 400px, -100px 300px;
+    }
+}
